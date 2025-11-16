@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ كاشف التصيد الذكي - النظام المتقدم</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- الهيدر -->
+        <header class="main-header">
+            <div class="header-content">
+                <h1>
+                    <i class="fas fa-shield-alt"></i>
+                    كاشف التصيد الذكي
+                </h1>
+                <p class="subtitle">نظام متقدم لاكتشاف مواقع التصيد باستخدام الذكاء الاصطناعي</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-badge">
+                    <i class="fas fa-robot"></i>
+                    <span>ذكاء اصطناعي</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>فحص فوري</span>
+                </div>
+                <div class="stat-badge">
+                    <i class="fas fa-database"></i>
+                    <span>قواعد متعددة</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- قسم الفحص الرئيسي -->
+        <section class="scan-section">
+            <div class="scan-card">
+                <h2>
+                    <i class="fas fa-search"></i>
+                    فحص رابط مشبوه
+                </h2>
+                
+                <div class="input-group">
+                    <div class="url-input-container">
+                        <input type="url" id="urlInput" 
+                               placeholder="https://example.com" 
+                               required>
+                        <button class="scan-btn" onclick="scanUrl()">
+                            <i class="fas fa-search"></i>
+                            فحص الآن
+                        </button>
+                    </div>
+                    <div class="input-hints">
+                        <span class="hint">
+                            <i class="fas fa-lightbulb"></i>
+                            أدخل الرابط الذي تريد فحصه
+                        </span>
+                    </div>
+                </div>
+
+                <!-- الخيارات المتقدمة -->
+                <div class="advanced-options">
+                    <div class="option-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="deepScan" checked>
+                            <span class="checkmark"></span>
+                            فحص متعمق باستخدام الذكاء الاصطناعي
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="apiCheck" checked>
+                            <span class="checkmark"></span>
+                            فحص عبر قواعد البيانات العالمية
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الفحص المتعدد -->
+        <section class="batch-section">
+            <div class="batch-card">
+                <h3>
+                    <i class="fas fa-list"></i>
+                    فحص متعدد
+                </h3>
+                <textarea id="batchUrls" 
+                          placeholder="ضع روابط متعددة هنا (سطر لكل رابط)&#10;مثال:&#10;https://example.com&#10;https://test-site.org"></textarea>
+                <button class="batch-btn" onclick="batchScan()">
+                    <i class="fas fa-layer-group"></i>
+                    فحص المجموعة
+                </button>
+            </div>
+        </section>
+
+        <!-- النتائج -->
+        <section id="resultSection" class="result-section" style="display: none;">
+            <div class="result-card">
+                <div id="resultContent">
+                    <!-- سيتم عرض النتائج هنا -->
+                </div>
+            </div>
+        </section>
+
+        <!-- الإحصائيات -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalScans">0</h3>
+                        <p>فحص إجمالي</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon danger">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="phishingCount">0</h3>
+                        <p>تصيد مكتشف</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="safeCount">0</h3>
+                        <p>روابط آمنة</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="todayScans">0</h3>
+                        <p>فحص اليوم</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- المميزات -->
+        <section class="features-section">
+            <h2>
+                <i class="fas fa-star"></i>
+                مميزات النظام
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>ذكاء اصطناعي متقدم</h3>
+                    <p>استخدام نماذج BERT وتحليل النصوص للكشف الدقيق عن التصيد</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>قواعد بيانات عالمية</h3>
+                    <p>التكامل مع VirusTotal و Google Safe Browsing لاكتشاف التهديدات</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>نتائج فورية</h3>
+                    <p>فحص سريع ودقيق مع تقارير مفصلة عن مستوى الخطورة</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>حماية شاملة</h3>
+                    <p>كشف متقدم لأنماط التصيد والمواقع الضارة</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- الفوتر -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="../templates/advanced-scan.html">
+                        <i class="fas fa-rocket"></i>
+                        الفحص المتقدم
+                    </a>
+                    <a href="../templates/dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        لوحة التحكم
+                    </a>
+                    <a href="#" onclick="showAbout()">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </a>
+                </div>
+                <div class="footer-info">
+                    <p>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        هذا النظام للأغراض التعليمية والأمنية فقط
+                    </p>
+                    <p class="copyright">
+                        &copy; 2025 كاشف التصيد الذكي. جميع الحقوق محفوظة.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- نموذج About -->
+    <div id="aboutModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fas fa-info-circle"></i>
+                    عن النظام
+                </h2>
+                <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>نظام كاشف التصيد الذكي هو نظام متقدم يستخدم:</p>
+                <ul>
+                    <li>🤖 الذكاء الاصطناعي وتحليل النصوص</li>
+                    <li>🌐 واجهات برمجة التطبيقات العالمية</li>
+                    <li>📊 تحليل أنماط التصيد</li>
+                    <li>🔍 فحص المحتوى والهيكل</li>
+                </ul>
+                <p>تم تطويره لأغراض تعليمية وأمنية.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>
