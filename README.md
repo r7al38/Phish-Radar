@@ -33,7 +33,14 @@ An intelligent AI-powered phishing detection system that combines machine learni
 
 ## 🛠️ Usage
 
+ - Run the Flask application:
+   ```bash
+   python app.py
+ - Access the web interface:
+   Open your browser and navigate to:
 
+   ```bash
+   http://localhost:5000
 
 
 
