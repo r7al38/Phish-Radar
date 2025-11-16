@@ -40,18 +40,4 @@ An intelligent AI-powered phishing detection system that combines machine learni
    Open your browser and navigate to:
 
    ```bash
-   http://localhost:5000
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
+   http://localhost:5000 
