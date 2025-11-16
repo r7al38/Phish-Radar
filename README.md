@@ -25,8 +25,8 @@ An intelligent AI-powered phishing detection system that combines machine learni
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/smart-phishing-detector.git
-   cd smart-phishing-detector
+   git clone https://github.com/r7al38/Phish-Radar.git
+   cd Phish-Radar
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
